@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MC App</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+
+    <h1>MotorCykel butiken</h1>
+    <img src="mc.jpg" class="rounded float-right" alt="mc" height="127" width="193"/>
+    <p><a href="/create" button type="button" class="btn btn-success">Opret</button></a></p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Fabrikat</th>
+            <th scope="col">Stelnummer</th>
+            <th scope="col">Motornummer</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="motorcycle: ${std}">
+            <td scope="row" th:text="${motorcycle.id}"/>
+            <td th:text="${motorcycle.brand}"/>
+            <td th:text="${motorcycle.chassisNumber}"/>
+            <td th:text="${motorcycle.motorNumber}"/>
+
+        </tr>
+        </tbody>
+    </table>
+    <footer class="footer">
+        &copy; MC-butikken
+
+    </footer>
+</div>
+
+
+</body>
+</html>
